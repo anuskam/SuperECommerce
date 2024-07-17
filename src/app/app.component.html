@@ -1,3 +1,7 @@
 <p>Congratulations! {{ 'title' | translate }} 🎉</p>
+<markdown>**testito**</markdown>
+<!-- <p>{{ patata }}</p> -->
+<markdown [data]="patata"></markdown>
+<button (click)="change()">Cambiar</button>
 <app-loading-overlay *ngIf="loadService.isLoading" />
 <router-outlet></router-outlet>
