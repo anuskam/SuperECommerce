@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import {
   HTTP_INTERCEPTORS,
   HttpClient,
   HttpClientModule,
 } from '@angular/common/http';
+
 // i18n
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { AnnaErrorPageModule } from 'anna-error-page-input';
+
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LoadInterceptor } from './core/interceptors/load.interceptor';
+
 import { CoreModule } from './core/core.module';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +35,7 @@ import { CoreModule } from './core/core.module';
     }),
     AnnaErrorPageModule,
     CoreModule,
+    NgxSkeletonLoaderModule,
   ],
   bootstrap: [AppComponent],
   providers: [
