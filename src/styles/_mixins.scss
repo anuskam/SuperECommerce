@@ -1,0 +1,14 @@
+@import 'variables';
+
+
+@mixin button-style {
+  border: none;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: $font-family;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+}

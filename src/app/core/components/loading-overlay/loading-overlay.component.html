@@ -1,0 +1,16 @@
+<div class="spinner-container">
+  <img
+    [src]="url"
+    [alt]="alt"
+    class="card-img"
+    (load)="onLoad()"
+    [ngStyle]="{ display: hasLoaded ? '' : 'none' }" />
+
+  <img
+    *ngIf="!hasLoaded"
+    src="assets/loader.svg"
+    alt="spinner"
+    height="35"
+    width="35"
+    class="mt-3" />
+</div>
