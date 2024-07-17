@@ -15,6 +15,8 @@ import { AnnaErrorPageModule } from 'anna-error-page-input';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LoadInterceptor } from './core/interceptors/load.interceptor';
 
+import { MarkdownModule } from 'ngx-markdown';
+import { AnnaErrorPageModule } from 'anna-error-page-input';
 import { CoreModule } from './core/core.module';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
@@ -23,6 +25,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MarkdownModule.forRoot(),
     TranslateModule,
     HttpClientModule,
     TranslateModule.forRoot({
