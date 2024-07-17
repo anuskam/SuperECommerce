@@ -10,8 +10,6 @@ import {
 
 // i18n
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { AnnaErrorPageModule } from 'anna-error-page-input';
-
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LoadInterceptor } from './core/interceptors/load.interceptor';
 
