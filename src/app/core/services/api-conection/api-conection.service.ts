@@ -1,13 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Inject, Injectable } from '@angular/core';
-import { SERVICE_CONFIG, ServiceConfig } from './config/api-service-config';
+import { inject, Injectable } from '@angular/core';
+import { SERVICE_CONFIG } from './config/api-service-config';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ApiConectionService <TModel, TDto> {
-
+export class ApiConectionService<TModel, TDto> {
   // protected readonly baseUrl: string;
   // protected readonly resourceEndpoint: string;
   protected httpClient = inject(HttpClient);
@@ -22,22 +21,34 @@ export class ApiConectionService <TModel, TDto> {
   // }
 
   getList() {
-    return this.httpClient.get<TModel[]>(`${this.baseUrl}${this.resourceEndpoint}`);
+    return this.httpClient.get<TModel[]>(
+      `${this.baseUrl}${this.resourceEndpoint}`,
+    );
   }
 
   getById(id: number) {
-    return this.httpClient.get<TModel>(`${this.baseUrl}${this.resourceEndpoint}/${id}`);
+    return this.httpClient.get<TModel>(
+      `${this.baseUrl}${this.resourceEndpoint}/${id}`,
+    );
   }
 
   add(dto: TDto) {
-    return this.httpClient.post<TModel>(`${this.baseUrl}${this.resourceEndpoint}`, dto);
+    return this.httpClient.post<TModel>(
+      `${this.baseUrl}${this.resourceEndpoint}`,
+      dto,
+    );
   }
 
   update(id: number, dto: TDto) {
-    return this.httpClient.put<TModel>(`${this.baseUrl}${this.resourceEndpoint}/${id}`, dto);
+    return this.httpClient.put<TModel>(
+      `${this.baseUrl}${this.resourceEndpoint}/${id}`,
+      dto,
+    );
   }
 
   remove(id: number) {
-    return this.httpClient.delete<number>(`${this.baseUrl}${this.resourceEndpoint}/${id}`);
+    return this.httpClient.delete<number>(
+      `${this.baseUrl}${this.resourceEndpoint}/${id}`,
+    );
   }
 }

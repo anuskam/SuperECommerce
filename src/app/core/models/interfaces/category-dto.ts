@@ -1,4 +1,4 @@
 export interface CategoryDTO {
-    name: string,
-    image: string,
+  name: string;
+  image: string;
 }

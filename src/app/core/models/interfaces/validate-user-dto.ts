@@ -1,4 +1,3 @@
 export interface ValidateUserDTO {
-    email: string,
-
+  email: string;
 }
