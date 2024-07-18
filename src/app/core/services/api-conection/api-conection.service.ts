@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Inject, Injectable } from '@angular/core';
-import { SERVICE_CONFIG, ServiceConfig } from './config/api-service-config';
+import { inject, Injectable } from '@angular/core';
+import { SERVICE_CONFIG } from './config/api-service-config';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
@@ -21,8 +21,13 @@ export class ApiConectionService <TModel, TDto> {
   //   this.resourceEndpoint = config.resourceEndpoint;
   // }
 
-  getList() {
-    return this.httpClient.get<TModel[]>(`${this.baseUrl}${this.resourceEndpoint}`);
+  getList(limit: number, offset: number) {
+    return this.httpClient.get<TModel[]>(`${this.baseUrl}${this.resourceEndpoint}`, {
+      params: {
+        limit: limit.toString(),
+        offset: offset.toString(),
+      }
+    });
   }
 
   getById(id: number) {
