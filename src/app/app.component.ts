@@ -17,10 +17,17 @@ export class AppComponent implements OnInit, AfterViewChecked {
   isLoading: boolean = false;
   loadService = inject(LoadService);
   private cdRef = inject(ChangeDetectorRef);
+  patata: string = 'patata';
 
   // Inicializamos el valor de isLoading con el valor inicial del servicio
   ngOnInit(): void {
     this.isLoading = this.loadService.isLoading;
+  }
+
+  change() {
+    console.log(this.patata);
+    this.patata = 'HOLA';
+    console.log(this.patata);
   }
 
   /* Esto verifica si el valor de isLoading ha cambiado después de cambiar de vista. Si ha
