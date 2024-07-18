@@ -10,6 +10,13 @@ const routes: Routes = [
     loadChildren: () => import('./features/dashboard/dashboard.module').then((p) => p.DashboardModule)
   },
   {
+    path: 'login',
+    loadChildren: () =>
+      import('./features/login/login.module').then(
+        module => module.LoginModule,
+      ),
+  },
+  {
     path: '**',
     component: AnnaErrorPageComponent,
     data: { routerLink: '/landing-page' },

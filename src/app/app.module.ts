@@ -17,6 +17,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { AnnaErrorPageModule } from 'anna-error-page-input';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { AdminModule } from './features/admin/admin.module';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { LandingPageModule } from './features/landing-page/landing-page.module';
 
@@ -41,6 +42,7 @@ import { LandingPageModule } from './features/landing-page/landing-page.module';
     NgxSkeletonLoaderModule,
     LandingPageModule,
     SharedModule,
+    AdminModule,
   ],
   bootstrap: [AppComponent],
   providers: [

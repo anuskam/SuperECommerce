@@ -4,10 +4,9 @@ import { SERVICE_CONFIG } from './config/api-service-config';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ApiConectionService <TModel, TDto> {
-
+export class ApiConectionService<TModel, TDto> {
   // protected readonly baseUrl: string;
   // protected readonly resourceEndpoint: string;
   protected httpClient = inject(HttpClient);
@@ -22,27 +21,40 @@ export class ApiConectionService <TModel, TDto> {
   // }
 
   getList(limit: number, offset: number) {
-    return this.httpClient.get<TModel[]>(`${this.baseUrl}${this.resourceEndpoint}`, {
-      params: {
-        limit: limit.toString(),
-        offset: offset.toString(),
-      }
-    });
+    return this.httpClient.get<TModel[]>(
+      `${this.baseUrl}${this.resourceEndpoint}`,
+      {
+        params: {
+          limit: limit.toString(),
+          offset: offset.toString(),
+        },
+      },
+    );
   }
 
   getById(id: number) {
-    return this.httpClient.get<TModel>(`${this.baseUrl}${this.resourceEndpoint}/${id}`);
+    return this.httpClient.get<TModel>(
+      `${this.baseUrl}${this.resourceEndpoint}/${id}`,
+    );
   }
 
   add(dto: TDto) {
-    return this.httpClient.post<TModel>(`${this.baseUrl}${this.resourceEndpoint}`, dto);
+    return this.httpClient.post<TModel>(
+      `${this.baseUrl}${this.resourceEndpoint}`,
+      dto,
+    );
   }
 
   update(id: number, dto: TDto) {
-    return this.httpClient.put<TModel>(`${this.baseUrl}${this.resourceEndpoint}/${id}`, dto);
+    return this.httpClient.put<TModel>(
+      `${this.baseUrl}${this.resourceEndpoint}/${id}`,
+      dto,
+    );
   }
 
   remove(id: number) {
-    return this.httpClient.delete<number>(`${this.baseUrl}${this.resourceEndpoint}/${id}`);
+    return this.httpClient.delete<number>(
+      `${this.baseUrl}${this.resourceEndpoint}/${id}`,
+    );
   }
 }
