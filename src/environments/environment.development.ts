@@ -1,8 +1,8 @@
 export const environment = {
-    baseUrl: '',
+    serviceUrl: 'https://api.escuelajs.co/api/v1/',
     production: false,
     secretKeys: {
         encrypt: false,
-        userKey: 'adrianPostigoVuelingUniversity'
+        userKey: 'AnnaMoretaAdrianPostigoVuelingUniversity'
     }
 };
