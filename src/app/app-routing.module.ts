@@ -6,8 +6,12 @@ import { LandingPageComponent } from './features/landing-page/pages/landing-page
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/landing-page' },
   { path: 'landing-page', component: LandingPageComponent },
-  { path: 'dashboard',
-    loadChildren: () => import('./features/dashboard/dashboard.module').then((p) => p.DashboardModule)
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./features/dashboard/dashboard.module').then(
+        p => p.DashboardModule,
+      ),
   },
   {
     path: 'login',

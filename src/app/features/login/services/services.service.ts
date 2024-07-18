@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { LoginDTO } from '../../../core/models/interfaces/login-dto';
+import { LoginDTO } from '../../../core/models/dto/login-dto';
 import { Observable, tap } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { SessionStorageService } from '../../../shared/utils/storage/session-storage.service';
