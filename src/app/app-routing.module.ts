@@ -7,6 +7,13 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/landing-page' },
   { path: 'landing-page', component: LandingPageComponent },
   {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./features/dashboard/dashboard.module').then(
+        p => p.DashboardModule,
+      ),
+  },
+  {
     path: 'login',
     loadChildren: () =>
       import('./features/login/login.module').then(

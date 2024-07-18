@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginDTO } from '../../../core/models/interfaces/login-dto';
+import { LoginDTO } from '../../../core/models/dto/login-dto';
 import { ServicesService } from '../services/services.service';
 import { SessionStorageService } from '../../../shared/utils/storage/session-storage.service';
 

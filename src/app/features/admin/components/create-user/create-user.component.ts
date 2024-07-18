@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiConectionService } from '../../../../core/services/api-conection/api-conection.service';
 import { environment } from '../../../../../environments/environment';
-import { UserDTO } from '../../../../core/models/interfaces/user-dto';
+import { UserDTO } from '../../../../core/models/dto/user-dto';
 
 @Component({
   selector: 'app-create-user',

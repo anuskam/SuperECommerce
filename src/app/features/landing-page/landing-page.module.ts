@@ -6,6 +6,6 @@ import { AngularMaterialsModule } from '../../shared/utils/angular-materials/ang
 @NgModule({
   declarations: [LandingPageComponent],
   imports: [CommonModule, AngularMaterialsModule],
-  exports: [LandingPageComponent],
+  // exports: [LandingPageComponent]
 })
 export class LandingPageModule {}

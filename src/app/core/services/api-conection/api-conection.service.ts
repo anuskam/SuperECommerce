@@ -20,9 +20,15 @@ export class ApiConectionService<TModel, TDto> {
   //   this.resourceEndpoint = config.resourceEndpoint;
   // }
 
-  getList() {
+  getList(limit: number, offset: number) {
     return this.httpClient.get<TModel[]>(
       `${this.baseUrl}${this.resourceEndpoint}`,
+      {
+        params: {
+          limit: limit.toString(),
+          offset: offset.toString(),
+        },
+      },
     );
   }
 
