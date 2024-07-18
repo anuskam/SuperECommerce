@@ -3,7 +3,8 @@ import { inject, Injectable } from '@angular/core';
 import { LoginDTO } from '../../../core/models/interfaces/login-dto';
 import { Observable, tap } from 'rxjs';
 import { environment } from '../../../../environments/environment';
-import { SessionStorageService } from '../../../core/services/session-storage.service';
+import { SessionStorageService } from '../../../shared/utils/storage/session-storage.service';
+
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -14,7 +15,7 @@ export class ServicesService {
   private router = inject(Router);
   private sessionStorageService = inject(SessionStorageService);
   protected readonly baseUrl: string = environment.serviceUrl;
-  protected readonly fullUrl: string = `${this.baseUrl}/auth/login`;
+  protected readonly fullUrl: string = `${this.baseUrl}auth/login`;
   private loggedIn: boolean = false;
   private token?: string;
 
@@ -28,7 +29,7 @@ export class ServicesService {
   }
 
   logout(): void {
-    this.sessionStorageService.removeToken();
+    this.sessionStorageService.removeItem('access_token');
     this.loggedIn = false;
     this.router.navigate(['login']);
   }
