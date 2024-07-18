@@ -1,24 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularMaterialsModule } from '../../shared/utils/angular-materials/angular-materials.module';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.modules';
 import { SERVICE_CONFIG } from '../../core/services/api-conection/config/api-service-config';
 import { ApiConectionService } from '../../core/services/api-conection/api-conection.service';
 import { ProductCardComponent } from './components/product-card/product-card.component';
-
-
+import { CatalogComponent } from './pages/catalog/catalog.component';
 
 @NgModule({
-  declarations: [
-    DashboardComponent,
-    ProductCardComponent
-  ],
-  imports: [
-    CommonModule,
-    DashboardRoutingModule,
-    AngularMaterialsModule
-  ],
+  declarations: [ProductCardComponent, CatalogComponent],
+  imports: [CommonModule, DashboardRoutingModule, AngularMaterialsModule],
   providers: [
     ApiConectionService,
     {
@@ -26,8 +17,6 @@ import { ProductCardComponent } from './components/product-card/product-card.com
       useValue: { resourceEndpoint: 'products' },
     },
   ],
-  exports: [
-    ProductCardComponent
-  ]
+  exports: [ProductCardComponent],
 })
-export class DashboardModule { }
+export class DashboardModule {}
