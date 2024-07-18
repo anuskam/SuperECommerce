@@ -7,6 +7,13 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/landing-page' },
   { path: 'landing-page', component: LandingPageComponent },
   {
+    path: 'login',
+    loadChildren: () =>
+      import('./features/login/login.module').then(
+        module => module.LoginModule,
+      ),
+  },
+  {
     path: '**',
     component: AnnaErrorPageComponent,
     data: { routerLink: '/landing-page' },

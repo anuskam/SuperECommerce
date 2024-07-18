@@ -18,9 +18,14 @@ import { AnnaErrorPageModule } from 'anna-error-page-input';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { UsersComponent } from './features/users/users.component';
+import { CreateUserComponent } from './features/users/component/create-user/create-user.component';
+import { RemoveUserComponent } from './features/admin/components/remove-user/remove-user.component';
+import { EditUserComponent } from './features/admin/components/edit-user/edit-user.component';
+import { ShowUsersComponent } from './features/admin/components/show-users/show-users.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, UsersComponent, CreateUserComponent, RemoveUserComponent, EditUserComponent, ShowUsersComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
