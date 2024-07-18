@@ -1,0 +1,18 @@
+.landing-page {
+  &__login {
+    background-color: #2f2f2f;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    padding: 10px 20px;
+
+  }
+  &__button {
+    height: fit-content;
+    padding: 8px 12px;
+  }
+
+  &__welcome-text {
+    text-align: center;
+  }
+}
