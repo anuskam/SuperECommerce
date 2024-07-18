@@ -16,6 +16,7 @@ export class ServicesService {
   private sessionStorageService = inject(SessionStorageService);
   protected readonly baseUrl: string = environment.serviceUrl;
   protected readonly fullUrl: string = `${this.baseUrl}auth/login`;
+  // pendiente new behaviour subject
   private loggedIn: boolean = false;
   private token?: string;
 
