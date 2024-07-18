@@ -1,0 +1,45 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .card__category_image{
+        width: 2rem;
+    }
+
+    .fix_padding{
+        padding: 0!important;
+        margin-bottom: 4px;
+    }
+    
+    .mat-card-content {
+        flex: 1;
+    }
+
+    .mdc-card__media{
+        cursor: pointer;
+    }
+
+    .container_description{
+        margin-top: 1rem;
+        height: 12rem;
+    
+        .truncated-text {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 9; /* Número de líneas visibles */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%; 
+        }
+    }
+
+    .mdc-card__actions{
+        justify-content: space-between;
+    }
+
+    .mat-card-actions {
+        margin-top: auto;
+    }
+}
+  
