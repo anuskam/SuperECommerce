@@ -1,0 +1,18 @@
+.header {
+    background-color: #2f2f2f;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px 20px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    .active-link{
+        color: red;
+    }
+
+    button{
+        color: white;
+    }
+}
