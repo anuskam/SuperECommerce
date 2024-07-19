@@ -3,10 +3,9 @@ import { SessionStorageService } from '../utils/storage/session-storage.service'
 import { Router } from '@angular/router';
 
 @Directive({
-  selector: '[appLoggout]'
+  selector: '[appLoggout]',
 })
 export class LoggoutDirective {
-
   sessionStorage = inject(SessionStorageService);
   router = inject(Router);
 
@@ -15,6 +14,5 @@ export class LoggoutDirective {
     sessionStorage.removeItem('access_token');
     sessionStorage.removeItem('data_profile');
     this.router.navigate(['landing-page']);
-
   }
 }

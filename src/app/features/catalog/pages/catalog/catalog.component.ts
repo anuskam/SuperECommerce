@@ -8,6 +8,7 @@ import { IProduct } from '../../../../core/models/view-models/iproduct';
   styleUrl: './catalog.component.scss',
 })
 export class CatalogComponent implements OnInit {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private productsService = inject(ApiConectionService<IProduct, any>);
   public arrProductsResponse: IProduct[] = [];
   private offset: number = 0;
@@ -18,7 +19,7 @@ export class CatalogComponent implements OnInit {
   }
 
   getProducts() {
-    const response = this.productsService
+    this.productsService
       .getList(this.limit, this.offset)
       .subscribe((params: IProduct[]) => {
         if(this.offset === 0) this.arrProductsResponse = params;

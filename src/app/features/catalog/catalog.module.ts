@@ -10,7 +10,12 @@ import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [ProductCardComponent, CatalogComponent],
-  imports: [CommonModule, CatalogRoutingModule, AngularMaterialsModule, SharedModule],
+  imports: [
+    CommonModule,
+    CatalogRoutingModule,
+    AngularMaterialsModule,
+    SharedModule,
+  ],
   providers: [
     ApiConectionService,
     {

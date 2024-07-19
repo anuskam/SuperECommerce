@@ -6,6 +6,8 @@ import { AngularMaterialsModule } from '../../shared/utils/angular-materials/ang
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login.component';
 import { AdminModule } from '../admin/admin.module';
+import { ApiConectionService } from '../../core/services/api-conection/api-conection.service';
+import { SERVICE_CONFIG } from '../../core/services/api-conection/config/api-service-config';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -15,6 +17,13 @@ import { AdminModule } from '../admin/admin.module';
     AngularMaterialsModule,
     ReactiveFormsModule,
     AdminModule,
+  ],
+  providers: [
+    ApiConectionService,
+    {
+      provide: SERVICE_CONFIG,
+      useValue: { resourceEndpoint: 'auth/profile' },
+    },
   ],
 })
 export class LoginModule {}

@@ -20,6 +20,7 @@ import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './features/admin/admin.module';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { LandingPageModule } from './features/landing-page/landing-page.module';
+import { SigninModule } from './features/signin/signin.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -43,6 +44,7 @@ import { LandingPageModule } from './features/landing-page/landing-page.module';
     LandingPageModule,
     SharedModule,
     AdminModule,
+    SigninModule,
   ],
   bootstrap: [AppComponent],
   providers: [

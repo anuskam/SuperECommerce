@@ -1,0 +1,15 @@
+.signin-form {
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  }
+
+  &__element {
+    min-width: 300px;
+  }
+
+  &__button {
+    min-width: 300px;
+  }
+}
