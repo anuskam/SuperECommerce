@@ -5,14 +5,13 @@ import { environment } from '../../../../../environments/environment';
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
-  styleUrl: './product-card.component.scss'
+  styleUrl: './product-card.component.scss',
 })
-export class ProductCardComponent implements OnInit{
-
+export class ProductCardComponent implements OnInit {
   @Input() dataProduct!: IProduct;
 
   ngOnInit(): void {
-    console.log(this.dataProduct)
+    console.log(this.dataProduct);
   }
 
   onImageError(event: ErrorEvent) {

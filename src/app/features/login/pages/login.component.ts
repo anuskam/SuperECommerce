@@ -41,7 +41,6 @@ export class LoginComponent implements OnInit {
         next: data => {
           console.log(data[0].role);
           this.sessionStorageService.setItem('data_profile', data);
-
         },
       });
     this.loginForm.reset();
