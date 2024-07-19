@@ -1,0 +1,13 @@
+.row_products{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 1rem;
+
+    .row_products__card{
+        width: 20rem;
+    }
+}
