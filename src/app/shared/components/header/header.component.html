@@ -1,6 +1,13 @@
-<!-- <div class="header">
+<div class="header">
   <button mat-button>Home</button>
-  <button mat-button>Products</button>
+  <button mat-button [routerLink]="['catalogue']" routerLinkActive="active-link">Catalogue</button>
   <button mat-button>Users</button>
   <button mat-button>About</button>
-</div> -->
+  <button  mat-fab extended class="landing-page__button" (click)="login()">
+    Login
+  </button>
+  <button appLoggout mat-fab extended class="landing-page__button">
+    Logout
+  </button>
+</div>
+

@@ -16,6 +16,7 @@ export class ProductCardComponent implements OnInit{
   }
 
   onImageError(event: ErrorEvent) {
+    console.log(event.target)
     const errorImage = environment.errorImage;
     (event.target as HTMLImageElement).src = errorImage;
   }

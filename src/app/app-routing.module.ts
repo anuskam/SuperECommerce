@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/landing-page' },
   { path: 'landing-page', component: LandingPageComponent },
   {
-    path: 'dashboard',
+    path: 'catalogue',
     loadChildren: () =>
       import('./features/catalog/catalog.module').then(
         p => p.CatalogModule,
