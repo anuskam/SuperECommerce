@@ -7,6 +7,15 @@
         width: 2rem;
     }
 
+    .truncated-title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; /* Número de líneas visibles */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%; 
+    }
+
     .fix_padding{
         padding: 0!important;
         margin-bottom: 4px;
