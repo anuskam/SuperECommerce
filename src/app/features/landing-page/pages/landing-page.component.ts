@@ -12,4 +12,8 @@ export class LandingPageComponent {
   login(): void {
     this.router.navigate(['login']);
   }
+
+  signin(): void {
+    this.router.navigate(['signin']);
+  }
 }

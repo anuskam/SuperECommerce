@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
-export class ServicesService {
+export class LoginService {
   private httpClient = inject(HttpClient);
   private router = inject(Router);
   private sessionStorageService = inject(SessionStorageService);

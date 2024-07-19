@@ -2,6 +2,6 @@ export interface UserDTO {
   email: string;
   name: string;
   password: string;
-  role: string;
+  role?: string;
   avatar: string;
 }

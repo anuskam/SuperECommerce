@@ -1,9 +1,21 @@
-<div class="landing-page"></div>
-<div class="landing-page__login">
-  <button  mat-fab extended class="landing-page__button" (click)="login()">
-    Login
-  </button>
+<div class="landing-page">
+  <div class="landing-page__login">
+    <button
+      mat-fab
+      extended
+      class="landing-page__login-button"
+      (click)="login()">
+      Login
+    </button>
+  </div>
+  <article class="landing-page__welcome-text">
+    <p>Welcome to super e-commerce page</p>
+    <button
+      mat-fab
+      extended
+      class="landig-page__signin-button"
+      (click)="signin()">
+      Signin
+    </button>
+  </article>
 </div>
-<article class="landing-page__welcome-text">
-  <p>Welcome to super e-commerce page</p>
-</article>

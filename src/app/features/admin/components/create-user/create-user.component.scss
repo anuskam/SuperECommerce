@@ -1,0 +1,13 @@
+.create-user-form {
+  max-width: 600px;
+  margin: 0 auto;
+  &__group { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  &__button {
+    
+  }
+}
