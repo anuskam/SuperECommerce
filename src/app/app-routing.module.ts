@@ -10,9 +10,7 @@ const routes: Routes = [
   {
     path: 'catalogue',
     loadChildren: () =>
-      import('./features/catalog/catalog.module').then(
-        p => p.CatalogModule,
-      ),
+      import('./features/catalog/catalog.module').then(p => p.CatalogModule),
   },
   {
     path: 'login',

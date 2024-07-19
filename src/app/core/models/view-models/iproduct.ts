@@ -1,12 +1,12 @@
-import { ICategory } from "./icategory";
+import { ICategory } from './icategory';
 
 export interface IProduct {
-    id: number;
-    title: string;
-    price: number;
-    description: string;
-    images: string[];
-    creationAt: string;
-    updatedAt: string;
-    category: ICategory;
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  images: string[];
+  creationAt: string;
+  updatedAt: string;
+  category: ICategory;
 }

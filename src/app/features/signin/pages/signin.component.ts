@@ -40,6 +40,7 @@ export class SigninComponent implements OnInit {
     this.apiConnectionService.add(signinFormValue).subscribe({
       next: data => {
         console.log(data);
+        alert(`The user ${data.name} has been created 😊`);
       },
     });
     this.router.navigate(['login']);
