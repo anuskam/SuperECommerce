@@ -11,11 +11,11 @@ export class ProductCardComponent implements OnInit {
   @Input() dataProduct!: IProduct;
 
   ngOnInit(): void {
-    console.log(this.dataProduct);
+    // console.log(this.dataProduct);
   }
 
   onImageError(event: ErrorEvent) {
-    console.log(event.target);
+    // console.log(event.target);
     const errorImage = environment.errorImage;
     (event.target as HTMLImageElement).src = errorImage;
   }

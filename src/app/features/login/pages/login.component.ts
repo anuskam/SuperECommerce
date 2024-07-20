@@ -4,8 +4,9 @@ import { Router } from '@angular/router';
 import { LoginDTO } from '../../../core/models/dto/login-dto';
 import { LoginService } from '../services/login.service';
 import { SessionStorageService } from '../../../shared/utils/storage/session-storage.service';
-import { ApiConectionService } from '../../../core/services/api-conection/api-conection.service';
 import { TokenDto } from '../../../core/models/dto/token-dto';
+import { UserDTO } from '../../../core/models/dto/user-dto';
+import { RolesEnum } from '../../../core/models/enums/roles.enum';
 
 // import { UserDTO } from '../../../core/models/interfaces/user-dto';
 
@@ -17,10 +18,10 @@ import { TokenDto } from '../../../core/models/dto/token-dto';
 export class LoginComponent implements OnInit {
   private formBuilder = inject(FormBuilder);
   private loginService = inject(LoginService);
-  private profileService = inject(ApiConectionService);
   private sessionStorageService = inject(SessionStorageService);
   public loginForm!: FormGroup;
   private router = inject(Router);
+  private user?: UserDTO;
   public token?: TokenDto;
 
   ngOnInit(): void {
@@ -32,7 +33,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     this.login();
-    // this.getProfile();
     this.loginForm.reset();
   }
 
@@ -47,18 +47,28 @@ export class LoginComponent implements OnInit {
         );
         this.getProfile();
 
-        // Esto es para gestionar roles con guards
-        // const admin: UserDTO = this.
       },
     });
   }
 
-  async getProfile(): Promise<void> {
+  getProfile(): void {
     this.loginService.getProfile(this.token as TokenDto).subscribe({
       next: data => {
-        console.log(data.role);
         this.sessionStorageService.setItem('data_profile', data);
       },
     });
+    this.user = this.sessionStorageService.getItem<UserDTO>(
+      'data_profile',
+    ) as UserDTO;
+    console.log(this.user?.role);
+    this.checkRol();
+  }
+
+  checkRol(): void {
+    if (this.user?.role === RolesEnum.admin) {
+      this.router.navigate(['admin-panel']);
+    } else {
+      this.router.navigate(['catalogue']);
+    }
   }
 }
