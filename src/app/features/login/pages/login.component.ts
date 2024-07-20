@@ -46,7 +46,6 @@ export class LoginComponent implements OnInit {
           this.token.access_token,
         );
         this.getProfile();
-
       },
     });
   }
@@ -55,13 +54,12 @@ export class LoginComponent implements OnInit {
     this.loginService.getProfile(this.token as TokenDto).subscribe({
       next: data => {
         this.sessionStorageService.setItem('data_profile', data);
+        this.user = this.sessionStorageService.getItem<UserDTO>(
+          'data_profile',
+        ) as UserDTO;
+        this.checkRol();
       },
     });
-    this.user = this.sessionStorageService.getItem<UserDTO>(
-      'data_profile',
-    ) as UserDTO;
-    console.log(this.user?.role);
-    this.checkRol();
   }
 
   checkRol(): void {
