@@ -32,7 +32,6 @@ export class CreateUserComponent implements OnInit {
 
   onSubmit(): void {
     const createUserFormValue: UserDTO = this.createUserForm.value;
-    console.log(createUserFormValue);
     this.apiConnectionService.add(createUserFormValue).subscribe({
       next: data => {
         console.log(data);

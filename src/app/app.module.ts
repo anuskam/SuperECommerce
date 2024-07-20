@@ -18,7 +18,6 @@ import { AnnaErrorPageModule } from 'anna-error-page-input';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './features/admin/admin.module';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { LandingPageModule } from './features/landing-page/landing-page.module';
 import { SigninModule } from './features/signin/signin.module';
 
@@ -40,7 +39,6 @@ import { SigninModule } from './features/signin/signin.module';
     }),
     AnnaErrorPageModule,
     CoreModule,
-    NgxSkeletonLoaderModule,
     LandingPageModule,
     SharedModule,
     AdminModule,

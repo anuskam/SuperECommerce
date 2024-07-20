@@ -24,12 +24,6 @@ export class AppComponent implements OnInit, AfterViewChecked {
     this.isLoading = this.loadService.isLoading;
   }
 
-  change() {
-    console.log(this.patata);
-    this.patata = 'HOLA';
-    console.log(this.patata);
-  }
-
   /* Esto verifica si el valor de isLoading ha cambiado después de cambiar de vista. Si ha
   cambiado, actualiza el valor y llama a detectChanges en el ChangeDetectorRef para forzar que
   se detecten los cambios */

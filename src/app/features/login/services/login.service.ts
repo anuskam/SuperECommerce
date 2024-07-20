@@ -27,7 +27,6 @@ export class LoginService {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getProfile(token: TokenDto): Observable<any> {
-    console.log('oteeeen', token);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token.access_token}`,
