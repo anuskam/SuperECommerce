@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
-import { RemoveUserComponent } from './components/remove-user/remove-user.component';
 import { ShowUsersComponent } from './components/show-users/show-users.component';
 import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
+import { TableComponent } from './pages/table/table.component';
 
 const routes: Routes = [
   {
@@ -18,10 +18,6 @@ const routes: Routes = [
       {
         path: 'editUser',
         component: EditUserComponent,
-      },
-      {
-        path: 'removeUser',
-        component: RemoveUserComponent,
       },
       {
         path: 'showUsers',

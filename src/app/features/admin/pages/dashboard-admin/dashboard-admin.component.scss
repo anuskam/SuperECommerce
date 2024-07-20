@@ -1,0 +1,17 @@
+
+.mdc-data-table__table {
+    margin: auto;
+    margin-top: 1em;
+    min-width: 80%;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    img {
+        width: 50px;
+        border-radius: 50%;
+    }
+}
