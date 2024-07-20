@@ -1,4 +1,11 @@
-import { AfterViewChecked, ChangeDetectorRef, Component, HostListener, inject, OnInit } from '@angular/core';
+import {
+  AfterViewChecked,
+  ChangeDetectorRef,
+  Component,
+  HostListener,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { ApiConectionService } from '../../../../core/services/api-conection/api-conection.service';
 import { IProduct } from '../../../../core/models/view-models/iproduct';
 import { LoadService } from '../../../../core/services/load.service';
@@ -35,16 +42,18 @@ export class CatalogComponent implements OnInit, AfterViewChecked {
     this.productsService
       .getList(this.limit, this.offset)
       .subscribe((params: IProduct[]) => {
-        if(this.offset === 0) this.arrProductsResponse = params;
+        if (this.offset === 0) this.arrProductsResponse = params;
         else params.forEach(product => this.arrProductsResponse.push(product));
       });
   }
 
-  @HostListener("window:scroll", ["$event"])
+  @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-    let pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
-    let max = document.documentElement.scrollHeight;
-    if(pos >= max )   {
+    const pos =
+      (document.documentElement.scrollTop || document.body.scrollTop) +
+      document.documentElement.offsetHeight;
+    const max = document.documentElement.scrollHeight;
+    if (pos >= max) {
       this.offset += 10;
       this.getProducts();
     }

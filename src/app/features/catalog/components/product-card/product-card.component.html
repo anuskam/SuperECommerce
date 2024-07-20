@@ -1,17 +1,31 @@
-  <mat-card class="card" appearance="outlined">
-    <mat-card-header class="card__header">
-      <div mat-card-avatar>
-        <img mat-card-image class="card__category_image" src="{{dataProduct.category.image | imageErrorUrl}}" (error)="onImageError($event)" alt="Photo of {{dataProduct.category.name}}">
-      </div>
-      <mat-card-title class="fix_padding truncated-title">{{dataProduct.title}}</mat-card-title>
-      <mat-card-subtitle class="fix_padding">{{dataProduct.category.name}}</mat-card-subtitle>
-    </mat-card-header>
-    <img class="img" mat-card-image src="{{dataProduct.images[0] | imageErrorUrl}}" (error)="onImageError($event)" alt="Photo of {{dataProduct.title}}">
-    <mat-card-content class="container_description">
-      <p class="truncated-text">{{dataProduct.description}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>ADD TO CART </button>
-      <button mat-button>ADD TO FAV</button>
-    </mat-card-actions>
+<mat-card class="card" appearance="outlined">
+  <mat-card-header class="card__header">
+    <div mat-card-avatar>
+      <img
+        mat-card-image
+        class="card__category_image"
+        src="{{ dataProduct.category.image | imageErrorUrl }}"
+        (error)="onImageError($event)"
+        alt="Photo of {{ dataProduct.category.name }}" />
+    </div>
+    <mat-card-title class="fix_padding truncated-title">{{
+      dataProduct.title
+    }}</mat-card-title>
+    <mat-card-subtitle class="fix_padding">{{
+      dataProduct.category.name
+    }}</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    class="img"
+    mat-card-image
+    src="{{ dataProduct.images[0] | imageErrorUrl }}"
+    (error)="onImageError($event)"
+    alt="Photo of {{ dataProduct.title }}" />
+  <mat-card-content class="container_description">
+    <p class="truncated-text">{{ dataProduct.description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>ADD TO CART</button>
+    <button mat-button>ADD TO FAV</button>
+  </mat-card-actions>
 </mat-card>

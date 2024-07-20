@@ -10,8 +10,17 @@ import { SharedModule } from '../../shared/shared.module';
 import { SkeletonProductCardComponent } from './components/skeleton-product-card/skeleton-product-card.component';
 
 @NgModule({
-  declarations: [ProductCardComponent, CatalogComponent, SkeletonProductCardComponent],
-  imports: [CommonModule, CatalogRoutingModule, AngularMaterialsModule, SharedModule],
+  declarations: [
+    ProductCardComponent,
+    CatalogComponent,
+    SkeletonProductCardComponent,
+  ],
+  imports: [
+    CommonModule,
+    CatalogRoutingModule,
+    AngularMaterialsModule,
+    SharedModule,
+  ],
   providers: [
     ApiConectionService,
     {

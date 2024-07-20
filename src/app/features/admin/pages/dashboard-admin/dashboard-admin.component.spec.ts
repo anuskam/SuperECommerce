@@ -8,10 +8,9 @@ describe('DashboardAdminComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DashboardAdminComponent]
-    })
-    .compileComponents();
-    
+      declarations: [DashboardAdminComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(DashboardAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -7,5 +7,9 @@ import { Router } from '@angular/router';
   styleUrl: './landing-page.component.scss',
 })
 export class LandingPageComponent {
+  private router = inject(Router);
 
+  signin(): void {
+    this.router.navigate(['signin']);
+  }
 }
