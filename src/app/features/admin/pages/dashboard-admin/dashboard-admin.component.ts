@@ -39,26 +39,26 @@ export class DashboardAdminComponent implements OnInit {
       this.dataSource.data = data;
     });
   } */
-  public columnHeaders: string[] = [
+  /* public columnHeaders: string[] = [
     'id',
     'title',
     'price',
     'description',
     'categoryid',
     'images',
-  ];
-  // public columnHeaders: string[] = ['id', 'name', 'email', 'role', 'avatar'];
+  ]; */
+  public columnHeaders: string[] = ['id', 'name', 'email', 'role', 'avatar'];
   public users: UserDTO[] = [];
   public products: ProductDTO[] = [];
-  public imageColumns: string[] = ['images'];
-  private productsService = inject(ApiConectionService);
-  // private usersService = inject(ApiConectionService);
+  public imageColumns: string[] = ['avatar'];
+  // private productsService = inject(ApiConectionService);
+  private usersService = inject(ApiConectionService);
   ngOnInit(): void {
-    this.productsService.getList(15, 0).subscribe((data: ProductDTO[]) => {
+    /* this.productsService.getList(15, 0).subscribe((data: ProductDTO[]) => {
       this.products = data;
-    });
-    /* this.usersService.getList(15, 0).subscribe((data: UserDTO[]) => {
-      this.users = data;
     }); */
+    this.usersService.getList(150, 0).subscribe((data: UserDTO[]) => {
+      this.users = data;
+    });
   }
 }

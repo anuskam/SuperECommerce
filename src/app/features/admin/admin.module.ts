@@ -32,7 +32,7 @@ import { TableComponent } from './pages/table/table.component';
     ApiConectionService,
     {
       provide: SERVICE_CONFIG,
-      useValue: { resourceEndpoint: 'products' },
+      useValue: { resourceEndpoint: 'users' },
     },
   ],
 })
