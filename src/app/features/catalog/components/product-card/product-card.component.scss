@@ -3,6 +3,10 @@
     flex-direction: column;
     height: 100%;
 
+    .card__header{
+        height: 5rem;
+    }
+
     .card__category_image{
         width: 2rem;
     }
@@ -21,12 +25,17 @@
         margin-bottom: 4px;
     }
     
+    .img{
+        height: 20rem;
+    }
+
     .mat-card-content {
         flex: 1;
     }
 
     .mdc-card__media{
         cursor: pointer;
+        margin-top: 1rem;
     }
 
     .container_description{

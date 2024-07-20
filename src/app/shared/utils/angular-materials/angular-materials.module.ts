@@ -11,6 +11,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 
+//prime ng
+import { SkeletonModule } from 'primeng/skeleton';
+
 
 @NgModule({
   declarations: [],
@@ -22,7 +25,9 @@ import { MatCardModule } from '@angular/material/card';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+
+    SkeletonModule
   ],
   providers: [provideAnimationsAsync()],
   exports: [
@@ -32,7 +37,9 @@ import { MatCardModule } from '@angular/material/card';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+
+    SkeletonModule
   ],
 })
 export class AngularMaterialsModule {}

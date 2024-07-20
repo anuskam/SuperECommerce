@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IProduct } from '../../../../core/models/view-models/iproduct';
 import { environment } from '../../../../../environments/environment';
 
@@ -7,13 +7,9 @@ import { environment } from '../../../../../environments/environment';
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss'
 })
-export class ProductCardComponent implements OnInit{
+export class ProductCardComponent{
 
   @Input() dataProduct!: IProduct;
-
-  ngOnInit(): void {
-    console.log(this.dataProduct)
-  }
 
   onImageError(event: ErrorEvent) {
     console.log(event.target)

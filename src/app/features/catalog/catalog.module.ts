@@ -7,9 +7,10 @@ import { ApiConectionService } from '../../core/services/api-conection/api-conec
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import { SharedModule } from '../../shared/shared.module';
+import { SkeletonProductCardComponent } from './components/skeleton-product-card/skeleton-product-card.component';
 
 @NgModule({
-  declarations: [ProductCardComponent, CatalogComponent],
+  declarations: [ProductCardComponent, CatalogComponent, SkeletonProductCardComponent],
   imports: [CommonModule, CatalogRoutingModule, AngularMaterialsModule, SharedModule],
   providers: [
     ApiConectionService,
@@ -18,6 +19,6 @@ import { SharedModule } from '../../shared/shared.module';
       useValue: { resourceEndpoint: 'products' },
     },
   ],
-  exports: [ProductCardComponent],
+  exports: [ProductCardComponent, SkeletonProductCardComponent],
 })
 export class CatalogModule {}

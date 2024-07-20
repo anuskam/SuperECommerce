@@ -21,6 +21,7 @@ import { AdminModule } from './features/admin/admin.module';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { LandingPageModule } from './features/landing-page/landing-page.module';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [

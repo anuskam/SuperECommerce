@@ -1,5 +1,12 @@
-<section class="row_products">
+<section class="row_products" *ngIf="isLoading; else products">
   <div *ngFor="let product of arrProductsResponse" class="row_products__card">
-    <app-product-card [dataProduct]="product"></app-product-card>
+    <app-skeleton-product-card></app-skeleton-product-card>
   </div>
 </section>
+<ng-template #products>
+  <section class="row_products">
+    <div *ngFor="let product of arrProductsResponse" class="row_products__card">
+      <app-product-card [dataProduct]="product"></app-product-card>
+    </div>
+  </section>
+</ng-template>
