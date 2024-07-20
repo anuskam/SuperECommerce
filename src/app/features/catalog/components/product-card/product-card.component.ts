@@ -7,8 +7,7 @@ import { environment } from '../../../../../environments/environment';
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss',
 })
-export class ProductCardComponent{
-
+export class ProductCardComponent {
   @Input() dataProduct!: IProduct;
 
   onImageError(event: ErrorEvent) {

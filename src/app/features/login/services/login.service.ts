@@ -38,12 +38,6 @@ export class LoginService {
     );
   }
 
-  logout(): void {
-    this.sessionStorageService.removeItem('access_token');
-    this.loggedIn = false;
-    this.router.navigate(['login']);
-  }
-
   isLoggedIn(): boolean {
     return this.loggedIn;
   }

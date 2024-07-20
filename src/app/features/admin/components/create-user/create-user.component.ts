@@ -17,7 +17,7 @@ export class CreateUserComponent implements OnInit {
   public createUserForm!: FormGroup;
   public rolesSelect = [
     { label: 'Administrator', value: 'admin' },
-    { label: 'User', value: 'user' },
+    { label: 'Customer', value: 'customer' },
   ];
 
   ngOnInit(): void {
