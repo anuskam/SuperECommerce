@@ -12,7 +12,12 @@ export class ApiConectionService<TModel, TDto> {
   protected httpClient = inject(HttpClient);
   protected readonly config = inject(SERVICE_CONFIG);
   protected readonly baseUrl: string = environment.serviceUrl;
-  protected readonly resourceEndpoint: string = this.config.resourceEndpoint;
+  // protected readonly resourceEndpoint: string = this.config.resourceEndpoint;
+  protected resourceEndpoint: string = this.config.resourceEndpoint;
+
+  setEndpoint(endpoint: 'users' | 'products') {
+    this.resourceEndpoint = endpoint;
+  }
 
   // constructor(
   // ) {

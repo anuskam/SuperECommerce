@@ -27,8 +27,13 @@ import { TableComponent } from './pages/table/table.component';
     ReactiveFormsModule,
     TableModule,
   ],
-  exports: [CreateUserComponent],
+  exports: [CreateUserComponent, TableComponent],
   providers: [
+    // ApiConectionService,
+    // {
+    //   provide: SERVICE_CONFIG,
+    //   useValue: { resourceEndpoint: 'users' },
+    // },
     ApiConectionService,
     {
       provide: SERVICE_CONFIG,

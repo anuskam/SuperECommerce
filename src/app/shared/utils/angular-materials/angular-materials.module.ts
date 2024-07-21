@@ -6,11 +6,17 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+// import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
-import { MatTableModule } from '@angular/material/table';
+// import { MatTableModule } from '@angular/material/table';
+
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
   declarations: [],
   imports: [
@@ -23,6 +29,9 @@ import { MatTableModule } from '@angular/material/table';
     MatSelectModule,
     MatCardModule,
     MatTableModule,
+
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [provideAnimationsAsync()],
   exports: [
@@ -34,6 +43,9 @@ import { MatTableModule } from '@angular/material/table';
     MatSelectModule,
     MatCardModule,
     MatTableModule,
+
+    MatPaginatorModule,
+    MatSortModule,
   ],
 })
 export class AngularMaterialsModule {}

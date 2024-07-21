@@ -12,53 +12,33 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrl: './dashboard-admin.component.scss',
 })
 export class DashboardAdminComponent implements OnInit {
-  /* arrayResponse: UserDTO[] | ProductDTO[] = [];
-  amountOfColumns: number = 0;
-  arrayHeaderNames: string[] = []; */
-  /* private usersService = inject(ApiConectionService);
-  public infoUser: UserDTO[] = [];
-  displayedColumns: string[] = [
-    'id',
-    'name',
-    'email',
-    'role',
-    'avatar',
-    'actions',
-  ];
-  dataSource = new MatTableDataSource<UserDTO>();
-  private snackBar = inject(MatSnackBar);
-  private dialog = inject(MatDialog);
-
-  ngOnInit(): void {
-    this.loadUsers();
-  }
-
-  loadUsers(): void {
-    this.usersService.getList(15, 0).subscribe((data: UserDTO[]) => {
-      console.log('data', data)
-      this.dataSource.data = data;
-    });
-  } */
-  /* public columnHeaders: string[] = [
-    'id',
-    'title',
-    'price',
-    'description',
-    'categoryid',
-    'images',
-  ]; */
-  public columnHeaders: string[] = ['id', 'name', 'email', 'role', 'avatar'];
+  public columnHeaders: string[] = [];
   public users: UserDTO[] = [];
   public products: ProductDTO[] = [];
+  public arrayResponse: UserDTO[] | ProductDTO[] = [];
   public imageColumns: string[] = ['avatar'];
-  // private productsService = inject(ApiConectionService);
-  private usersService = inject(ApiConectionService);
+  private apiService = inject(ApiConectionService);
+  // private usersService = inject(ApiConectionService);
+
   ngOnInit(): void {
-    /* this.productsService.getList(15, 0).subscribe((data: ProductDTO[]) => {
-      this.products = data;
-    }); */
-    this.usersService.getList(150, 0).subscribe((data: UserDTO[]) => {
-      this.users = data;
+    this.getUsers();
+    // this.getProducts();
+  }
+
+  getUsers(){
+    this.columnHeaders = ['id', 'name', 'email', 'role', 'avatar'];
+    this.apiService.setEndpoint('users');
+    this.apiService.getList(0, 0).subscribe((data: UserDTO[]) => {
+      this.arrayResponse = data;
+    });
+  }
+
+  getProducts(){
+    this.columnHeaders = ['title', 'price', 'description', 'id', 'images'];
+    this.apiService.setEndpoint('products');
+    this.apiService.getList(0, 0).subscribe((data: ProductDTO[]) => {
+      this.arrayResponse = data;
+      console.log(this.arrayResponse)
     });
   }
 }
