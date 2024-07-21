@@ -13,8 +13,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class DashboardAdminComponent implements OnInit {
   public columnHeaders: string[] = [];
-  public users: UserDTO[] = [];
-  public products: ProductDTO[] = [];
+  // public users: UserDTO[] = [];
+  // public products: ProductDTO[] = [];
   public arrayResponse: UserDTO[] | ProductDTO[] = [];
   public imageColumns: string[] = ['avatar'];
   private apiService = inject(ApiConectionService);
