@@ -1,5 +1,5 @@
 <mat-card class="card" appearance="outlined">
-  <mat-card-header>
+  <mat-card-header class="card__header">
     <div mat-card-avatar>
       <img
         mat-card-image
@@ -19,6 +19,7 @@
     mat-card-image
     src="{{ dataProduct.images[0] | imageErrorUrl }}"
     (error)="onImageError($event)"
+    class="img"
     alt="Photo of {{ dataProduct.title }}" />
   <mat-card-content class="container_description">
     <p class="truncated-text">{{ dataProduct.description }}</p>
