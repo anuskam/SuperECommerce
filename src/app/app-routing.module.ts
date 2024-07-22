@@ -1,14 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AnnaErrorPageComponent } from 'anna-error-page-input';
-import { LandingPageComponent } from './features/landing-page/pages/landing-page.component';
-import { adminGuard } from './core/guards/admin.guard';
-import { customerGuard } from './core/guards/customer.guard';
+import { LandingPageComponent } from './features/public/landing-page/pages/landing-page.component';
+/* import { adminGuard } from './core/guards/admin.guard';
+import { customerGuard } from './core/guards/customer.guard'; */
 import { authGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/landing-page' },
   {
+    path: 'landing-page',
+    component: LandingPageComponent,
+  },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./features/public/public.module').then(
+        module => module.PublicModule,
+      ),
+  },
+  {
+    path: 'home',
+    canActivate: [authGuard],
+    loadChildren: () =>
+      import('./features/private/private.module').then(
+        module => module.PrivateModule,
+      ),
+  },
+  /* {
     path: 'landing-page',
     component: LandingPageComponent,
     canActivate: [authGuard],
@@ -41,7 +60,7 @@ const routes: Routes = [
       import('./features/admin/admin.module').then(
         module => module.AdminModule,
       ),
-  },
+  }, */
   {
     path: '**',
     component: AnnaErrorPageComponent,

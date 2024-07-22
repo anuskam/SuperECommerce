@@ -17,9 +17,8 @@ import { MarkdownModule } from 'ngx-markdown';
 import { AnnaErrorPageModule } from 'anna-error-page-input';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import { AdminModule } from './features/admin/admin.module';
-import { LandingPageModule } from './features/landing-page/landing-page.module';
-import { SigninModule } from './features/signin/signin.module';
+import { PublicModule } from './features/public/public.module';
+import { PrivateModule } from './features/private/private.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,10 +38,9 @@ import { SigninModule } from './features/signin/signin.module';
     }),
     AnnaErrorPageModule,
     CoreModule,
-    LandingPageModule,
     SharedModule,
-    AdminModule,
-    SigninModule,
+    PublicModule,
+    PrivateModule,
   ],
   bootstrap: [AppComponent],
   providers: [
