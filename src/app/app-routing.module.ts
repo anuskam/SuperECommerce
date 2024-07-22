@@ -3,12 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { AnnaErrorPageComponent } from 'anna-error-page-input';
 import { LandingPageComponent } from './features/landing-page/pages/landing-page.component';
 import { adminGuard } from './core/guards/admin.guard';
+import { customerGuard } from './core/guards/customer.guard';
+import { authGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/landing-page' },
-  { path: 'landing-page', component: LandingPageComponent },
+  {
+    path: 'landing-page',
+    component: LandingPageComponent,
+    canActivate: [authGuard],
+  },
   {
     path: 'catalogue',
+    canMatch: [customerGuard],
+    canActivate: [authGuard],
     loadChildren: () =>
       import('./features/catalog/catalog.module').then(p => p.CatalogModule),
   },

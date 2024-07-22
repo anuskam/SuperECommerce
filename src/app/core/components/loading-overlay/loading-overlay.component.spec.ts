@@ -8,10 +8,9 @@ describe('LoadingOverlayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LoadingOverlayComponent]
-    })
-    .compileComponents();
-    
+      declarations: [LoadingOverlayComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LoadingOverlayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

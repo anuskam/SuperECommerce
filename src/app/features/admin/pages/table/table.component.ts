@@ -12,6 +12,7 @@ import { ProductDTO } from '../../../../core/models/dto/product-dto';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-table',
@@ -19,7 +20,7 @@ import { MatSort } from '@angular/material/sort';
   styleUrl: './table.component.scss',
 })
 export class TableComponent implements OnInit, OnChanges, AfterViewInit {
-// export class TableComponent {
+  // export class TableComponent {
   @Input() columnHeaders: string[] = [];
   @Input() dataSource: UserDTO[] | ProductDTO[] = [];
   @Input() imageColumns: string[] = [];
@@ -51,5 +52,11 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
     if (this.matDataSource.paginator) {
       this.matDataSource.paginator.firstPage();
     }
+  }
+
+  onImageError(event: ErrorEvent) {
+    // console.log(event.target);
+    const errorImage = environment.errorImage;
+    (event.target as HTMLImageElement).src = errorImage;
   }
 }

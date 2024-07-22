@@ -24,7 +24,7 @@
     "@angular/router": "^17.3.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
-    "anna-error-page-input": "^0.0.7",
+    "anna-error-page-input": "^0.0.8",
     "crypto-js": "^4.2.0",
     "marked": "^12.0.2",
     "ngx-markdown": "^17.2.1",
