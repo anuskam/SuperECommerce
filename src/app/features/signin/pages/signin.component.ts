@@ -21,7 +21,7 @@ export class SigninComponent implements OnInit {
 
   public rolesSelect = [
     { label: 'Administrator', value: 'admin' },
-    { label: 'User', value: 'user' },
+    { label: 'Customer', value: 'customer' },
   ];
 
   ngOnInit(): void {

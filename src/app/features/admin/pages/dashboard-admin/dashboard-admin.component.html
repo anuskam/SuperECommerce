@@ -1,3 +1,18 @@
-<p>dashboard-admin works!</p>
-
-<!-- <router-outlet></router-outlet> -->
+<section class="dashboard">
+  <section class="select_btn">
+    <div class="example-button-row">
+      <button (click)="getUsers()" mat-button>Users</button>
+    </div>
+    <div class="example-button-row">
+      <button (click)="getProducts()" mat-button>Products</button>
+    </div>
+  </section>
+  
+  <section class="table_results">
+    <app-table
+    [columnHeaders]="columnHeaders"
+    [dataSource]="arrayResponse"
+    [imageColumns]="imageColumns"></app-table>
+    <!-- <app-table></app-table> -->
+  </section>
+</section>
