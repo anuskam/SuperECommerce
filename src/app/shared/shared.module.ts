@@ -23,6 +23,11 @@ import { LoggoutDirective } from './directives/loggout.directive';
     LoggoutDirective,
   ],
   imports: [CommonModule, AngularMaterialsModule, RouterLink, RouterModule],
-  exports: [GoBackDirective, UrlImageFormatPipe, HeaderComponent, ImageErrorUrlPipe],
+  exports: [
+    GoBackDirective,
+    UrlImageFormatPipe,
+    HeaderComponent,
+    ImageErrorUrlPipe,
+  ],
 })
 export class SharedModule {}

@@ -10,7 +10,6 @@ import { ShowUsersComponent } from './components/show-users/show-users.component
 import { ApiConectionService } from '../../core/services/api-conection/api-conection.service';
 import { SERVICE_CONFIG } from '../../core/services/api-conection/config/api-service-config';
 import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
-import { TableModule } from 'primeng/table';
 import { TableComponent } from './pages/table/table.component';
 import { SharedModule } from '../../shared/shared.module';
 @NgModule({
@@ -26,7 +25,6 @@ import { SharedModule } from '../../shared/shared.module';
     AdminRoutingModule,
     AngularMaterialsModule,
     ReactiveFormsModule,
-    TableModule,
     SharedModule,
   ],
   exports: [CreateUserComponent, TableComponent],
