@@ -4,7 +4,6 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { ShowUsersComponent } from './components/show-users/show-users.component';
 import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
-import { TableComponent } from './pages/table/table.component';
 
 const routes: Routes = [
   {

@@ -12,6 +12,7 @@ import { SERVICE_CONFIG } from '../../core/services/api-conection/config/api-ser
 import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
 import { TableModule } from 'primeng/table';
 import { TableComponent } from './pages/table/table.component';
+import { SharedModule } from '../../shared/shared.module';
 @NgModule({
   declarations: [
     CreateUserComponent,
@@ -26,6 +27,7 @@ import { TableComponent } from './pages/table/table.component';
     AngularMaterialsModule,
     ReactiveFormsModule,
     TableModule,
+    SharedModule,
   ],
   exports: [CreateUserComponent, TableComponent],
   providers: [

@@ -7,12 +7,11 @@
       <button (click)="getProducts()" mat-button>Products</button>
     </div>
   </section>
-  
+
   <section class="table_results">
     <app-table
-    [columnHeaders]="columnHeaders"
-    [dataSource]="arrayResponse"
-    [imageColumns]="imageColumns"></app-table>
-    <!-- <app-table></app-table> -->
+      [columnHeaders]="columnHeaders"
+      [dataSource]="arrayResponse"
+      [imageColumns]="imageColumns"></app-table>
   </section>
 </section>
