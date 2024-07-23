@@ -14,7 +14,6 @@ export class SigninComponent implements OnInit {
   private formBuilder = inject(FormBuilder);
   private router = inject(Router);
   protected readonly baseUrl: string = environment.serviceUrl;
-  protected readonly fullUrl: string = `${this.baseUrl}users`;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private apiConnectionService = inject(ApiConectionService<UserDTO, any>);
   public signinForm!: FormGroup;
@@ -43,6 +42,6 @@ export class SigninComponent implements OnInit {
         alert(`The user ${data.name} has been created 😊`);
       },
     });
-    this.router.navigate(['login']);
+    this.router.navigate(['auth/login']);
   }
 }
