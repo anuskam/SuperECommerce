@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DoCheck, inject, Input, OnChanges, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from '../../../../../../environments/environment.development';
 import { UserDTO } from '../../../../../core/models/dto/user-dto';
@@ -8,7 +8,8 @@ import { ApiConectionService } from '../../../../../core/services/api-conection/
   templateUrl: './create-user.component.html',
   styleUrl: './create-user.component.scss',
 })
-export class CreateUserComponent implements OnInit {
+export class CreateUserComponent implements OnInit, OnChanges, DoCheck {
+  @Input() user?: UserDTO;
   private formBuilder = inject(FormBuilder);
   protected readonly baseUrl: string = environment.serviceUrl;
   protected readonly fullUrl: string = `${this.baseUrl}users`;
@@ -19,15 +20,29 @@ export class CreateUserComponent implements OnInit {
     { label: 'Administrator', value: 'admin' },
     { label: 'Customer', value: 'customer' },
   ];
+  public isEdit: boolean = false;
 
   ngOnInit(): void {
+    this.initForm();
+  }
+
+  ngOnChanges(): void {
+    this.initForm();
+  }
+
+  ngDoCheck(): void {
+    this.setValues();
+  }
+
+  initForm(): void{
     this.createUserForm = this.formBuilder.group({
-      email: [null, Validators.required],
-      name: [null, Validators.required],
-      password: [null, Validators.required],
+      email: ['', Validators.required],
+      name: ['', Validators.required],
+      password: ['', Validators.required],
       role: ['', Validators.required],
       avatar: ['cat.jpg', Validators.required],
     });
+    this.isEdit = false;
   }
 
   onSubmit(): void {
@@ -37,5 +52,16 @@ export class CreateUserComponent implements OnInit {
         console.log(data);
       },
     });
+  }
+
+  setValues(): void{
+    this.createUserForm.patchValue({
+      email: this.user?.email,
+      name: this.user?.name,
+      password: this.user?.password,
+      role: this.user?.role,
+      avatar: this.user?.avatar,
+    });
+    this.isEdit = true;
   }
 }

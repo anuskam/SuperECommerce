@@ -7,7 +7,7 @@ export const authGuard: CanActivateFn = () => {
   const isLogged = sessionStorageService.getItem('access_token');
   const router = inject(Router);
 
-  if (isLogged) {
+  if (!isLogged) {
     return true;
   } else {
     router.navigate(['landing-page']);
