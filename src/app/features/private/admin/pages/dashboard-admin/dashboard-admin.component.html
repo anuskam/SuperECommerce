@@ -1,17 +1,26 @@
-<section class="dashboard">
-  <section class="select_btn">
-    <div class="example-button-row">
-      <button (click)="getUsers()" mat-button>Users</button>
-    </div>
-    <div class="example-button-row">
-      <button (click)="getProducts()" mat-button>Products</button>
-    </div>
+<div class="main_screen">
+  <section class="dashboard">
+    <section class="select_btn">
+      <div class="example-button-row">
+        <button (click)="getUsers()" mat-button>Users</button>
+      </div>
+      <div class="example-button-row">
+        <button (click)="getProducts()" mat-button>Products</button>
+      </div>
+      <div class="example-button-row">
+        <button (click)="create()" mat-button>Create</button>
+      </div>
+    </section>
+  
+    <section class="table_results">
+      <app-table
+        [columnHeaders]="columnHeaders"
+        [dataSource]="arrayResponse"
+        [imageColumns]="imageColumns" (element)="actionToResolve($event)"></app-table>
+    </section>
   </section>
-
-  <section class="table_results">
-    <app-table
-      [columnHeaders]="columnHeaders"
-      [dataSource]="arrayResponse"
-      [imageColumns]="imageColumns"></app-table>
+  <section class="div_actions" *ngIf="showFiller">
+    <button class="close_btn" (click)="close_btn()" mat-button>Close</button>
+    <app-create-user [user]="user"></app-create-user>
   </section>
-</section>
+</div>

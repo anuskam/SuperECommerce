@@ -1,9 +1,21 @@
-.create-user-form {
-  max-width: 600px;
-  margin: 0 auto;
-  &__group { 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
+// .create-user-form {
+//   max-width: 600px;
+//   margin: 0 auto;
+//   &__group { 
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     gap: 16px;
+//   }
+// }
+
+.create-user-form__group{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+mat-form-field{
+  width: 100%;
+  margin-inline-end: 3rem;
 }

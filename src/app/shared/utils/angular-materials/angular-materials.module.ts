@@ -17,7 +17,10 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatRadioModule} from '@angular/material/radio';
 import { SkeletonModule } from 'primeng/skeleton';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -32,6 +35,7 @@ import { SkeletonModule } from 'primeng/skeleton';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatSidenavModule
     SkeletonModule,
   ],
   providers: [provideAnimationsAsync()],
@@ -46,6 +50,7 @@ import { SkeletonModule } from 'primeng/skeleton';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatSidenavModule
     SkeletonModule,
   ],
 })

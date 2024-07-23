@@ -1,9 +1,11 @@
 import {
   AfterViewInit,
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
@@ -17,10 +19,9 @@ import { UserDTO } from '../../../../../core/models/dto/user-dto';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrl: './table.component.scss',
+  styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit, OnChanges, AfterViewInit {
-  // export class TableComponent {
   @Input() columnHeaders: string[] = [];
   @Input() dataSource: UserDTO[] | ProductDTO[] = [];
   @Input() imageColumns: string[] = [];
@@ -28,6 +29,7 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
   matDataSource = new MatTableDataSource<UserDTO | ProductDTO>();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  @Output() element: EventEmitter<{ data: UserDTO | ProductDTO, isEdit: boolean }> = new EventEmitter();
 
   ngOnInit(): void {
     this.displayedColumns = this.columnHeaders;
@@ -55,8 +57,15 @@ export class TableComponent implements OnInit, OnChanges, AfterViewInit {
   }
 
   onImageError(event: ErrorEvent) {
-    // console.log(event.target);
     const errorImage = environment.errorImage;
     (event.target as HTMLImageElement).src = errorImage;
+  }
+
+  editElement(element: UserDTO | ProductDTO) {
+    this.element.emit({ data: element, isEdit: true });
+  }
+
+  deleteElement(element: UserDTO | ProductDTO) {
+    this.element.emit({ data: element, isEdit: false });
   }
 }
