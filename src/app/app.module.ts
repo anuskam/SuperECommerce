@@ -19,7 +19,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { PublicModule } from './features/public/public.module';
 import { PrivateModule } from './features/private/private.module';
-
+import { SkeletonModule } from 'primeng/skeleton';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -41,6 +41,7 @@ import { PrivateModule } from './features/private/private.module';
     SharedModule,
     PublicModule,
     PrivateModule,
+    SkeletonModule,
   ],
   bootstrap: [AppComponent],
   providers: [
