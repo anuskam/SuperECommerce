@@ -7,15 +7,20 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import { SharedModule } from '../../../shared/shared.module';
 import { AngularMaterialsModule } from '../../../shared/utils/angular-materials/angular-materials.module';
-
+import { SkeletonProductCardComponent } from './components/skeleton-product-card/skeleton-product-card.component';
 @NgModule({
-  declarations: [ProductCardComponent, CatalogComponent],
+  declarations: [
+    ProductCardComponent,
+    CatalogComponent,
+    SkeletonProductCardComponent,
+  ],
   imports: [
     CommonModule,
     CatalogRoutingModule,
     AngularMaterialsModule,
     SharedModule,
   ],
+  exports: [ProductCardComponent, SkeletonProductCardComponent],
   providers: [
     ApiConectionService,
     {
@@ -23,6 +28,5 @@ import { AngularMaterialsModule } from '../../../shared/utils/angular-materials/
       useValue: { resourceEndpoint: 'products' },
     },
   ],
-  exports: [ProductCardComponent],
 })
 export class CatalogModule {}
