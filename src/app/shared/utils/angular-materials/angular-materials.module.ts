@@ -17,6 +17,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { SkeletonModule } from 'primeng/skeleton';
 @NgModule({
   declarations: [],
   imports: [
@@ -29,9 +30,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSelectModule,
     MatCardModule,
     MatTableModule,
-
     MatPaginatorModule,
     MatSortModule,
+    SkeletonModule,
   ],
   providers: [provideAnimationsAsync()],
   exports: [
@@ -43,9 +44,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSelectModule,
     MatCardModule,
     MatTableModule,
-
     MatPaginatorModule,
     MatSortModule,
+    SkeletonModule,
   ],
 })
 export class AngularMaterialsModule {}

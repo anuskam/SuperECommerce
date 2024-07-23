@@ -13,9 +13,16 @@ export class CatalogComponent implements OnInit {
   public arrProductsResponse: IProduct[] = [];
   private offset: number = 0;
   private readonly limit: number = 10;
+  public hasLoaded: boolean = false;
 
   ngOnInit(): void {
     this.getProducts();
+  }
+
+  onLoad() {
+    setTimeout(() => {
+      this.hasLoaded = true;
+    }, 3000);
   }
 
   getProducts() {
@@ -24,6 +31,7 @@ export class CatalogComponent implements OnInit {
       .subscribe((params: IProduct[]) => {
         if (this.offset === 0) this.arrProductsResponse = params;
         else params.forEach(product => this.arrProductsResponse.push(product));
+        this.onLoad();
       });
   }
 
