@@ -35,7 +35,7 @@ import { SkeletonModule } from 'primeng/skeleton';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatSidenavModule
+    MatSidenavModule,
     SkeletonModule,
   ],
   providers: [provideAnimationsAsync()],
@@ -50,7 +50,7 @@ import { SkeletonModule } from 'primeng/skeleton';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatSidenavModule
+    MatSidenavModule,
     SkeletonModule,
   ],
 })
