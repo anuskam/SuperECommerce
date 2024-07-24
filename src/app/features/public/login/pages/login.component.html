@@ -1,4 +1,10 @@
+<div class="login-form__return-button">
+  <button appGoBack>Go back</button>
+</div>
 <div class="login-form">
+  <h1 class="login-form__title">
+    <markdown>**Log in**</markdown>
+  </h1>
   <form [formGroup]="loginForm" (submit)="onSubmit()">
     <div class="login-form__group">
       <mat-form-field appearance="outline">
