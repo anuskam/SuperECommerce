@@ -3,3 +3,9 @@
 	src: url('../assets/OpenSans.ttf');
 }
 $font-family: 'OpenSans';
+$bg-color: #F2E5D7;
+$secondary-color: #AA767C;
+
+:root {
+  --font-family: #{$font-family};
+}

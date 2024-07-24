@@ -41,3 +41,10 @@
   }
 }
 
+:host ::ng-deep .p-skeleton {
+  background-color: gray;
+}
+
+:host ::ng-deep .p-skeleton::after {
+  background-color: gray !important;
+}

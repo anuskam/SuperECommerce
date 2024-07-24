@@ -1,4 +1,10 @@
+<div class="signin-form__return-button">
+  <button appGoBack>Go back</button>
+</div>
 <div class="signin-form">
+  <h1 class="signin-form__title">
+    <markdown>**Sign in**</markdown>
+  </h1>
   <form [formGroup]="signinForm" (submit)="onSubmit()">
     <div class="signin-form__group">
       <mat-form-field appearance="outline" class="signin-form__element">
@@ -17,7 +23,7 @@
         <mat-label>Avatar</mat-label>
         <input matInput placeholder="Avatar" formControlName="avatar" />
       </mat-form-field>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="signin-form__element">
         <mat-label>Role</mat-label>
         <mat-select formControlName="role">
           <mat-option *ngFor="let role of rolesSelect" [value]="role.value">

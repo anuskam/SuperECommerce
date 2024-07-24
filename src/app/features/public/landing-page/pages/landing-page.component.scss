@@ -1,7 +1,17 @@
+@import 'mixins';
+@import 'variables';
+
 .landing-page {
-  &__button {
-    height: fit-content;
-    padding: 8px 12px;
+  padding-top: 100px;
+  &__signin-button, &__login-button {
+    @include button-style;
+    background-color: $secondary-color;
+  }
+
+  button {
+    &:last-of-type {
+      margin-left: 15px;
+    }
   }
 
   &__welcome-text {

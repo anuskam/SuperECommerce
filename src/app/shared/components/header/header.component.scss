@@ -1,18 +1,118 @@
+@import 'variables';
+
 .header {
-    background-color: #2f2f2f;
+  background-color: #2f2f2f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1;
+  height: 50px;
+  color: white;
+
+  .header__menu-button {
+    color: white;
+    margin-bottom: 10px;
+
+    @media (min-width: 720px) {
+      display: none;
+    }
+  }
+
+  .header__nav {
     display: flex;
-    justify-content: space-between;
-    text-align: center;
-    padding: 10px 20px;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+    background-color: #2f2f2f;
+  }
 
-    .active-link{
-        color: red;
+  .header__nav button {
+    color: white;
+    margin: 5px 0;
+  }
+
+  .active-link {
+    color: red;
+  }
+
+  &__button {
+    background-color: $secondary-color;
+  }
+
+  .header__nav.open {
+    display: block;
+    max-height: 500px;
+  }
+
+  @media (min-width: 720px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+    .header__menu-button {
+      display: none;
     }
 
-    button{
-        color: white;
+    .header__nav {
+      display: flex;
+      flex-direction: row;
+      max-height: none;
+      overflow: visible;
     }
+
+    .header__nav button {
+      margin: 0 10px;
+    }
+  }
 }
+/*  .mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #04AA6D;
+  color: white;
+} */
