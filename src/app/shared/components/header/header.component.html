@@ -1,17 +1,30 @@
 <div class="header">
-  <button mat-button>Home</button>
-  <button
-    mat-button
-    [routerLink]="['catalogue']"
-    routerLinkActive="active-link">
-    Catalogue
+  <button class="header__menu-button" mat-icon-button (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
   </button>
-  <button mat-button>Users</button>
-  <button mat-button>About</button>
-  <!-- <button mat-fab extended class="landing-page__button" (click)="login()">
-    Login
-  </button> -->
-  <button appLoggout mat-fab extended class="landing-page__button">
-    Logout
-  </button>
+  <div class="header__nav">
+    <button mat-button>Home</button>
+    <button
+      mat-button
+      [routerLink]="['catalogue']"
+      routerLinkActive="active-link">
+      Catalogue
+    </button>
+    <button mat-button>Users</button>
+    <button mat-button>About</button>
+    <button appLoggout mat-fab extended class="header__button">Logout</button>
+  </div>
 </div>
+
+<!-- <div class="mobile-container">
+  <div class="topnav">
+    <div id="myLinks">
+      <a [routerLink]="['catalogue']">News</a>
+      <a>Contact</a>
+      <a>About</a>
+    </div>
+    <a class="icon" (click)="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div> -->
