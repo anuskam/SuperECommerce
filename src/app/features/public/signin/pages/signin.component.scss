@@ -1,15 +1,44 @@
+@import 'mixins';
+
 .signin-form {
-  &__group {
-    display: flex;
-    flex-direction: column;
-    align-items: center
+  max-width: 600px;
+  margin: 0 auto;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__group { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 20px;
+    @media(min-width: 750px) {
+      padding: 0;
+    }
   }
 
   &__element {
-    min-width: 300px;
+    grid-column: span 2;
+
+    @media(min-width: 750px) {
+      grid-column: span 1;
+    }
+
+  }
+
+  &__button {
+    grid-column: span 2;
+    justify-self: center;
+    margin-top: 16px;
   }
 
   &__button {
     min-width: 300px;
+    background-color: $secondary-color;
+  }
+
+  &__return-button {
+    padding: 20px;
   }
 }

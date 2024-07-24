@@ -7,6 +7,8 @@ import { LoginComponent } from './pages/login.component';
 import { ApiConectionService } from '../../../core/services/api-conection/api-conection.service';
 import { SERVICE_CONFIG } from '../../../core/services/api-conection/config/api-service-config';
 import { AngularMaterialsModule } from '../../../shared/utils/angular-materials/angular-materials.module';
+import { SharedModule } from '../../../shared/shared.module';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -15,6 +17,8 @@ import { AngularMaterialsModule } from '../../../shared/utils/angular-materials/
     LoginRoutingModule,
     AngularMaterialsModule,
     ReactiveFormsModule,
+    SharedModule,
+    MarkdownModule,
   ],
   providers: [
     ApiConectionService,
